@@ -5,198 +5,87 @@
 		</h1>
     </p>
 </div>
+<h1>
+    Introduction of the project
+</h1>
+<p>
+    This document covers the analysis and design tasks of a software application to be developed for a car rental company. The purpose of this application is
+    to manage information about vehicles available for rental, the various transactions for rentals, the companyâ€™s customers, and the users of the software
+    application. The application will also allow SuperRent to manage the sale of older rental vehicles as used cars. This document is intended to be given to
+    the software developers so that they can begin development on the software.
+</p>
+<p>
+    The particular scope of the application that this document focuses on is the tasks and functions that will be handled by clerks at various SuperRent
+    locations. When a rental vehicle is returned by a customer, a clerk enters the date, time and the odometer reading. The clerk also makes a note of whether
+    the gas tank is full. The software application calculates the charges by applying weekly rates to whole weeks, daily rate to remaining days and hourly rate
+    to additional hours.
+</p>
+<p>
+    The application or the specific module for clerks should allow clerks to perform the following tasks:
+</p>
+<p>
+    -Show the vehicles of a specified category which are available for rental at a given location for a given set of time period (given as beginning and end
+    dates)
+</p>
+<p>
+    -Show the vehicles rented from a given location and category which have not been returned past the scheduled return date.
+</p>
+<p>
+    -Show the vehicles at a given location and category that are for sales along with their sale prices
+</p>
+<p>
+    -If a category is not selected, vehicles in all available categories are displayed, grouped by category.
+</p>
+<p>
+    -If a SuperRent location is not selected, rental vehicles available at all locations are shown, grouped by location.
+</p>
+
+<p>
+    When a clerk starts the application, it will require login credentials before the clerk can use the application. After a clerk enters his / her correct
+    username &amp; password combination, the software will load the appropriate module for a clerk.
+</p>
+<h1>
+    Background
+</h1>
+<p>
+    SuperRent is a vehicle rental company. The company began operations in 2003 with two locations. Through steady growth in the last ten years, SuperRent has
+    locations in various cities across the country. Its headquarters are located in Burnaby, BC. SuperRent operates regional offices as well to better manage
+    and run its vehicle rental locations.
+</p>
+<p>
+    Each location has an assortment of vehicles available for customers to rent. The available car types consist of the following: economy, compact, mid-size,
+    standard, full-size, premium, luxury, SUV, and van. SuperRent also has trucks available in various sizes; 24 foot, 15 foot, 12 foot, box trucks, cargo
+    vans. The vehicles available for rental have varying features and options to meet the needs of its customers. The different types of vehicles have
+    different hourly, daily, and weekly rates, as well as different rates based on distance driven (charged for extra kilometers driven above the limit). The
+    company offers varying insurance coverage options for hourly, daily, and weekly rentals for its fleet of cars and trucks.
+</p>
+<p>
+    SuperRent offers to its customers fairly new and well maintained vehicles for rental. Any vehicle that surpasses 80,000 kilometers on the odometer reading
+    is taken out of the rental inventory. These used cars are made available for sale to allow the company to acquire capital and the space to purchase new
+    vehicles for rental.
+</p>
 
 <h1>
-    Design Documents
-</h1>
-<h1>
-    System Design
+    Process model
 </h1>
 <p>
-    The design of the overall clerk system structure.
-</p>
-<h2>
-    Architecture
-</h2>
-<p>
-    At the architectural design level, we use an architectural context diagram (ACD) to model the manner which software interacts with entities external to its
-    boundaries.
-</p>
-<p>
-    Superordinate systems  the Clerk function is one component of SuperRent system. It will call by up level functions
+    This document focuses on a single module of the car rental system software being developed for SuperRent Car Rental Company and that module is the one that
+    will be used by clerks. The incremental process model has been chosen for this module of the software application. The incremental process model works best
+    for this situation where the module for clerks is being developed sort of separately from the rest of the car rental system. Initially, an early version of
+    the clerks module will be delivered to the teams working on the remaining car rental system components to see how it works in the larger application. As
+    development on the module progress through various stages, there will be tests to see how it functions and interacts with other modules in the car rental
+    system. Some of these testing activities may result anywhere from minor to major modifications to the module. Through the development of the application,
+    an increment of the clerks module will first be delivered to teams working on other components of the application to be integrated with the main
+    application and then an increment of the application will be delivered to the clients for review.
 </p>
 <p>
-    Peer-level systems  Report Display, Credit Card Validation, Car rental system
-</p>
-<ul>
-    <li>
-        Actors - Clear, Control Panel, Menu Display
-    </li>
-</ul>
-<p>
-    <img width="578" height="250" src="images/clip_image012.jpg"/>
-</p>
-<br clear="all"/>
-<p>
-    <strong></strong>
-</p>
-<h2>
-    Components
-</h2>
-<p>
-    <img width="578" height="350" src="images/clip_image014.jpg"/>
-</p>
-<h2>
-    Database / data structure
-</h2>
-<p>
-    <img width="578" height="332" src="images/clip_image016.jpg"/>
-    <strong></strong>
-</p>
-<h2>
-    Detailed Class Diagrams
-</h2>
-<p>
-    <img width="578" height="366" src="images/clip_image018.jpg"/>
-</p>
-<br clear="all"/>
-<p>
-    <strong></strong>
+    <img width="625" height="383" src="images/clip_image041.png"/>
 </p>
 <h1>
-    Detailed Sequence Diagrams / State Diagrams
-</h1>
-<h2>
-    Login
-</h2>
-<p>
-    <img width="578" height="326" src="images/clip_image020.jpg"/>
-    <strong></strong>
-</p>
-<h2>
-    Create Rental
-</h2>
-<p>
-    <img width="578" height="393" src="images/clip_image022.jpg"/>
-</p>
-<h2>
-    Show Report
-</h2>
-<p>
-    <img width="578" height="369" src="images/clip_image024.jpg"/>
-</p>
-<h2>
-    Return Vehicle
-</h2>
-<p>
-    <img width="578" height="337" src="images/clip_image026.jpg"/>
-</p>
-<h1>
-    User Interface
+    Gantt Chart
 </h1>
 <p>
-    Common theme Design, each section of the site should have a common look/theme. The company logo should be on every page as well as a common header. All
-    font types and basic layout should be used throughout the site
-</p>
-<p>
-    Graphic files should be relative to site. Design with simplicity to allow for quickest loading. All pages should be tested at both 28K and 56K dial-up
-    modem speeds to ensure each webpage can be accessed timely.
-</p>
-<p>
-    Designed for HTML version 5.0, version of browser MS Internet Explorer 6.0+ and compliable browsers.
-</p>
-<p>
-    Filename convention: file extensions = â€œ.htmlâ€�, home page name =â€�index.htmlâ€�
-</p>
-<p>
-    Scripting languages: PHP 5.0 ???
-</p>
-<p>
-    Database: MS-ACCESS
-</p>
-<p>
-    SSL for secure information transferring over internet, such as credit card information, password.
-</p>
-<h2>
-    Style Guide
-</h2>
-<p>
-    Visually appealing - The site must have attractive mix of text, photos and graphics and should give customers a strong impression of the hotel service,
-    features and characteristics.
-</p>
-<p>
-    Theme of the site - warm tones, giving the feeling of home, highlights, simple and clear language, images reflect the theme of the site, and showing the
-    site's personality and taste. Promotion and corporate logo will through the site to enhance their visibility.
-</p>
-<p>
-    For ease of use, the website must provide consistent orientation and navigational aids, such as hierarchical menus that tell users how deep they are into a
-    topic or subtopic as well as a homepage link or icon on each page in the same position.
-</p>
-<h3>
-    Screen page
-</h3>
-<p>
-    n Page header: identification of the web site and its logo.
-</p>
-<p>
-    n Page: navigation should be the major part, the online room booking, special offers, partnersâ€™ information, membership information, and the latest event
-    information.
-</p>
-<h3>
-    Navigation design
-</h3>
-<p>
-    Navigation system is an effective tool to connect pages through hypertext or image links, the viewer can easily open pages on the website.
-</p>
-<h2>
-    Screen Layout
-</h2>
-<p>
-    This is a sample of layout. All pages of the site will follow, and each page will has it own contents as style guide.
-</p>
-<br clear="all"/>
-<p>
-    <strong></strong>
-</p>
-<h2>
-    Screen Template
-</h2>
-<p>
-    <img width="578" height="327" src="images/clip_image028.jpg"/>
-</p>
-<h2>
-    Vehicle Sale Screen
-</h2>
-<p>
-    <img width="578" height="351" src="images/clip_image030.jpg"/>
-</p>
-<h2>
-    Clerk Login screen
-</h2>
-<p>
-    <img width="578" height="244" src="images/clip_image032.jpg"/>
-</p>
-<h2>
-    Vehicle screen
-</h2>
-<p>
-    <img width="578" height="346" src="images/clip_image034.jpg"/>
-</p>
-<h2>
-    Rental Screen
-</h2>
-<p>
-    <img width="578" height="298" src="images/clip_image036.jpg"/>
-</p>
-<h2>
-    Customer Screen
-</h2>
-<p>
-    <img width="578" height="287" src="images/clip_image038.jpg"/>
-</p>
-<h2>
-    Reservation Screen
-</h2>
-<p>
-    <img width="578" height="297" src="images/clip_image040.jpg"/>
+    The development of this software application is expected to take about two months. Here is a gantt chart that shows the timeline of the project.
+	<p> 
+    <img width="625" height="469" src="images/clip_image043.jpg"/>
 </p>
